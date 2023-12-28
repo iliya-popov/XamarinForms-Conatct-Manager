@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Thiis document is edit by Iliya Popov 12.12.2023-->
+<resources>
+    <color name="launcher_background">#FFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+	<!--Add new splash background color-->
+    <color name="splash_background">#fff3f2</color>
+</resources>
