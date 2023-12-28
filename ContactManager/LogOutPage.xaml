@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Author Iliya Popov 12.12.2023-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Contact Manager &#169;2023"
+             BackgroundImage="Background.png"
+             x:Class="ContactManager.LogoutPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Flower"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent">
+            <Label Text="Exit the application?" Style="{StaticResource LabelStyle}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="ExitBtn" Text="Exit" Clicked="ExitBtn_Clicked" FontFamily="IndieFlower" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

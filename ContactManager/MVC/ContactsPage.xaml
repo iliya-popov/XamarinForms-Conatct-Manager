@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Author Iliya Popov 12.12.2023-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Contacts"
+             x:Class="ContactManager.ContactsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+            <CollectionView x:Name="ContactsView"
+                        SelectionMode="Single"
+                        Margin="20, 8, 20, 0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                  <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItem Text="Edit" BackgroundColor="Azure"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="Edit_SwipeItem_Invoked"/>
+                                <SwipeItem Text="Delete" BackgroundColor="Azure"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="Del_SwipeItem_Invoked"/>
+                            </SwipeView.RightItems>        
+                       
+                    <Grid  x:Name="ContentTbl" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Id}" Grid.Row="0"
+                               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Names}" Grid.Row="0" Grid.Column="1"
+                               VerticalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                        <Label Text="{Binding Phone}" Grid.Row="1" Grid.Column="1"
+                               VerticalOptions="CenterAndExpand" FontSize="20" FontAttributes="Italic"/>
+                            <Label Text="{Binding Address}" Grid.Row="2" Grid.Column="1" 
+                               FontSize="20" FontAttributes="Bold"/>
+                        </Grid>
+                  </SwipeView>
+                    </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

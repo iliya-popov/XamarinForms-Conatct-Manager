@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add new contatc"
+             x:Class="ContactManager.MVC.AddContacts">
+    <ContentPage.Content>
+        <StackLayout Margin="25">
+            <Entry Placeholder="Your names" x:Name="NamesEntry"
+                   TextTransform="Uppercase"/>
+            <Entry Keyboard="Numeric" Placeholder="Pnone" x:Name="PhoneNumber"/>
+            <Entry Placeholder="Address" x:Name="Address"/>
+            <Button Text="Запис" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

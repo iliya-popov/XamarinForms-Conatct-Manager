@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Author Iliya Popov 12.12.2023; Custom flyout menu page-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContactManager"
+             Title="Menu"
+             x:Class="ContactManager.FMenuPage">
+    <StackLayout>
+        <ListView BackgroundColor="Azure" x:Name="MenuListView" x:FieldModifier="public">
+            <!--Add the menu items to an array-->
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FMenuItem}">
+                    <local:FMenuItem Title="Home" IconSource="home_ico.png" TPage="{x:Type local:HomePage}"/>
+                    <local:FMenuItem Title="Contacts" IconSource="contacts_ico.png" TPage="{x:Type local:ContactsPage}"/>
+                    <local:FMenuItem Title="Author" IconSource="author_ico.png" TPage="{x:Type local:AboutPage}"/>
+                    <local:FMenuItem Title="Exit" IconSource="exit_ico.png" TPage="{x:Type local:LogoutPage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+            <!--Menu template-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="4" Source="{Binding IconSource}"/>
+                            <Label VerticalOptions="Center" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" 
+                                   FontSize="Large" FontAttributes="Bold"  TextColor="CadetBlue"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

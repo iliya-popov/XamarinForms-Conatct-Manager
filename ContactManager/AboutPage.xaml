@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Author Iliya Popov 12.12.2023-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Contact Manager &#169;2023"
+             BackgroundImageSource="Background_Author.jpg"
+             x:Class="ContactManager.AboutPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LblStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="WhiteSmoke"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Flower"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="IsClippedToBounds" Value="True"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="150"/>
+                <Setter Property="WidthRequest" Value="100"/>
+                <Setter Property="HeightRequest" Value="100"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+ 
+    <ContentPage.Content>
+        <Grid x:Name="Contents">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" VerticalOptions="Start">
+                <Grid x:Name="AuthorData">
+                    <Label Grid.Row="0" Text="Author" Style="{StaticResource LblStyle}"
+                     VerticalOptions="CenterAndExpand" Margin="0, 20, 0, 0"
+                     HorizontalOptions="CenterAndExpand"/>
+                    <Frame Grid.Row="1" BorderColor="White"
+                          Style="{StaticResource FrameStyle}">
+                        <Image Source="img3.png"/>
+                    </Frame>
+                    <Label Grid.Row="2" Text="Author Names" Style="{StaticResource LblStyle}"
+                           HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center">
+                <Label Text="Any text here" Style="{StaticResource LblStyle}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
