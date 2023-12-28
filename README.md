@@ -1,2 +1,2 @@
 # XamarinForms-Conatct-Manager
-Contact Manager - Sample mobile application
+Contact Manager - mobile application
